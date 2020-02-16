@@ -1,0 +1,6 @@
+@mixin svg($svg){
+  background-image: url('data:image/png;base64,' + $svg);
+  background-image: url('data:image/svg+xml,' + $svg);
+  background-repeat: no-repeat;
+};
+

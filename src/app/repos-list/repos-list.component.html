@@ -1,0 +1,11 @@
+<section>
+
+  <div class="repos-list-container" *ngIf="(settings$ | async).showList">
+      <app-repo-items></app-repo-items>
+  </div>
+
+  <div class="spinner" *ngIf="(settings$ | async).loading"></div>
+
+  <div class="message" [ngClass]="(message$ | async).type" *ngIf="(settings$ | async).showMessage">{{ (message$ | async).msg }}</div>
+
+</section>

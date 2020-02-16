@@ -1,0 +1,12 @@
+<div class="searchbar-container">
+  <form #searchForm="ngForm" (ngSubmit)="getRepos(searchForm)" autocomplete="off">
+    <div>
+      <label>Wpisz nazwę użytkownika repo</label>
+    </div>
+    <div class="searchbar">
+      <input name="userName" ngModel type="text" (ng-enter)="getRepos(searchForm)" [disabled]="(settings$ | async).loading">
+      <button type="submit" class="search-btn" [disabled]="(settings$ | async).loading"></button>
+    </div>
+  </form>
+</div>
+

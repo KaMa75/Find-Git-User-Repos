@@ -1,0 +1,17 @@
+<div class="repo-items">
+  <perfect-scrollbar style="max-height: 500px">
+    <div class="repo-item" *ngFor="let repo of repos$ | async">
+      <div class="avatar">
+        <img src="{{ repo?.owner.avatar_url }}"/>
+      </div>
+      <div class="content">
+        <h2>{{ repo?.name }}</h2>
+        <p>{{ repo?.description }}</p>
+        <p class="branch">{{ repo?.default_branch }}</p>
+      </div>
+      <a href={{repo?.html_url}} target="_blank">
+        <div class="arrow"></div>
+      </a>
+    </div>
+  </perfect-scrollbar>
+</div>
